@@ -5,7 +5,7 @@ const Layout: React.FC<{
   children: ReactNode
 }> = ({children}) => {
   return (
-    <div className="container mx-auto">
+    <div className="container mx-auto bg-white h-full dark:bg-gray-900">
       <NavigationBar/>
       <main>
         {children}
