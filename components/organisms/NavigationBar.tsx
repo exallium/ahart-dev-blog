@@ -1,10 +1,10 @@
 import React from "react";
 import * as NavigationMenu from '@radix-ui/react-navigation-menu';
-import NavigationLinkItem from "@/components/molecules/NavigationLinkItem/NavigationLinkItem";
+import NavigationLinkItem from "@/components/molecules/NavigationLinkItem";
 
 const NavigationBar: React.FC = () => {
   return (
-    <NavigationMenu.Root className='relative flex w-full'>
+    <NavigationMenu.Root className='relative flex w-full h-12 items-center'>
       <NavigationMenu.List className='flex p-1'>
         <NavigationLinkItem href='/'>
           AHART.DEV

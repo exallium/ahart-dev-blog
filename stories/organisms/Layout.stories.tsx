@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meta } from "@storybook/react";
-import Layout from "@/components/templates/Layout/Layout";
+import Layout from "@/components/templates/Layout";
 
 export default {
   component: Layout

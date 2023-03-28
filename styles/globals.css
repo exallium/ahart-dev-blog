@@ -19,3 +19,17 @@
     color-scheme: dark;
   }
 }
+
+/* Markdown styling for page contents */
+
+.markdown h1 {
+  @apply mt-3;
+  @apply text-2xl;
+  @apply font-semibold;
+}
+
+.markdown p {
+  @apply py-2;
+  @apply leading-7;
+  @apply font-normal;
+}
