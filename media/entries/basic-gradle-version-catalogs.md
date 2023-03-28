@@ -7,19 +7,31 @@ Version catalogs are an effective way to help manage your dependencies across mu
 
 Historically, this would have been solved via use of the project-level `ext` object. We can see this pattern throughout samples given out by Google and other library providers. In the past I’ve used this approach effectively in large-scale software projects, where we built out something that looks fairly similar to what I am about to discuss today.
 
-[https://gist.github.com/exallium/adc15f811066f928938d4067bfca6953](https://gist.github.com/exallium/adc15f811066f928938d4067bfca6953)
+```gradle
+ext {
+  compose_version = "1.2.1"
+  navigation_version = "2.5.2"
+  // etc.
+}
+```
 
 # Separation of concerns
 
 When starting a new project in Android Studio these days, there are some additional things in `settings.gradle` that may be unfamiliar to folks working on older projects. This includes a `dependencyResolutionManagement` configuration block.
 
-[https://gist.github.com/exallium/b1dcbc99d4b2e0eeb090cbd4c2613fe2](https://gist.github.com/exallium/b1dcbc99d4b2e0eeb090cbd4c2613fe2)
-
+```gradle
+dependencyResolutionManagement {
+  versionCatalogs {
+  }
+}
+```
 This is your entry point for dependency version catalogs. Since this is declared in your top-level `settings.gradle` file, it is accessible from any subproject in your application. Within the `versionCatalogs` block, we can define our dependencies.
 
 I have two immediate recommendations here. Number one is to pull this block out into a separate file, `dependencies.gradle`, and then replacing the block in `settings.gradle` with a simple apply-from statement:
 
-[https://gist.github.com/exallium/9954da4e766fa8e222559dcd8d0848fb](https://gist.github.com/exallium/9954da4e766fa8e222559dcd8d0848fb)
+```gradle
+apply from: 'dependencies.gradle'
+```
 
 This will give you a separate file in which to devote to your dependencies, and will help keep your `settings.gradle` file clean and tidy. We let `settings.gradle` remain a top-level configuration file for your project, but give the responsibility of defining our dependencies to `dependencies.gradle`, better adhering to the [Single Responsibility Principle](https://en.wikipedia.org/wiki/Single-responsibility_principle).
 
@@ -31,7 +43,14 @@ Careful readers will note that our `dependencyResolutionManagement` has an objec
 
 My recommendation is to think about how your application utilizes dependency namespacing already, and consider using that as a guideline to how you create namespaces in this file. For example in your `dependencies` block today, you likely have several namespaces to work with. The common ones are your “base” namespace and “test”. These are `implementation` and `testImplementation`, respectively. We can add objects to `versionCatalogs` for each of these.
 
-[https://gist.github.com/exallium/01f668519063b33ccfa70581cfef67b3](https://gist.github.com/exallium/01f668519063b33ccfa70581cfef67b3)
+```gradle
+dependencyResolutionManagement {
+  versionCatalogs {
+    libs {}
+    testLibs {}
+  }
+}
+```
 
 If we had another configuration, we could add that here too. For example, `androidTestLibs` could be its own catalog. The most important thing here is that however we build out our catalogs, we should ensure that any given dependency is listed exactly once. If subproject A replies on dependency a for `stagingImplementation` but subproject relies on it for `implementation` or some other custom variation, then we should store the dependency a under `libs`.
 
@@ -39,7 +58,18 @@ If we had another configuration, we could add that here too. For example, `andro
 
 Now that we have our structure created, how do we add dependencies? We add `library` entries.
 
-[https://gist.github.com/exallium/440fbca014714e4b0d74d3c917b5fb16](https://gist.github.com/exallium/440fbca014714e4b0d74d3c917b5fb16)
+```gradle
+dependencyResolutionManagement {
+  versionCatalogs {
+    libs {
+      library('androidx-recyclerview', 'androidx.recyclerview:recyclerview:2.1')
+    }
+    testLibs {
+      library('junit', 'junit.junit:4.13.2')
+    }
+  }
+}
+```
 
 In our `build.gradle` file, we can now reference back to these:
 
@@ -48,7 +78,18 @@ In our `build.gradle` file, we can now reference back to these:
 
 We can also utilize `version()` to share versions between multiple components. Doing so allows us to keep different dependencies in lock-step with each other.
 
-[https://gist.github.com/exallium/78279a6a76cf60e3b641cacfff7d4d75](https://gist.github.com/exallium/78279a6a76cf60e3b641cacfff7d4d75)
+```gradle
+dependencyResolutionManagement {
+  versionCatalogs {
+    libs {
+      version('mylibrary', '2.1.1')
+      library('mylibrary-artifact-a', 'org.mylibrary', 'artifact-a').versionRef('mylibrary')
+      library('mylibrary-artifact-b', 'org.mylibrary', 'artifact-b').versionRef('mylibrary')
+      library('mylibrary-artifact-c', 'org.mylibrary', 'artifact-c').versionRef('mylibrary')
+    }
+  }
+}
+```
 
 # A note on naming
 

@@ -1,7 +1,6 @@
 import {GetStaticPropsContext, InferGetStaticPropsType} from "next";
 import BlogEntryFetcher from "@/lib/BlogEntryFetcher";
 import React, {useMemo} from "react";
-import H1 from "@/components/atoms/H1";
 import BlogTitle from "@/components/molecules/BlogTitle";
 
 export async function getStaticPaths() {
