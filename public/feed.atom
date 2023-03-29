@@ -4,11 +4,27 @@
   <title>AHART.DEV</title>
   <link href="https://ahart.dev/"/>
   <link rel="self" href="https://ahart.dev/feed.atom"/>
-  <updated>2023-03-29T13:11:03Z</updated>
+  <updated>2023-03-29T19:57:28Z</updated>
   <author>
     <name>Alex Hart</name>
   </author>
   <id>https://ahart.dev/</id>
+
+  <entry>
+    <title>Disposability, testability, readability</title>
+    <link rel="alternate" href="/blog/disposability-testability-readability"/>
+    <id>https://ahart.dev/blog/disposability-testability-readability"/</id>
+    <updated>2023-03-29T19:57:28Z</updated>
+    <summary>Today I want to do a bit of a brain dump on what I consider three of the most important concepts that any Junior should wrap their head around.</summary>
+  </entry>
+
+  <entry>
+    <title>Dissecting a bad class declaration</title>
+    <link rel="alternate" href="/blog/dissecting-a-bad-class-declaration"/>
+    <id>https://ahart.dev/blog/dissecting-a-bad-class-declaration"/</id>
+    <updated>2023-03-29T19:57:28Z</updated>
+    <summary>About a year ago, there was a class declaration that I came across on Twitter that was so bad I said I could write an entire article on it. Well, folks who told me to just do it, I’m doing it.</summary>
+  </entry>
 
   <entry>
     <title>How to fill knowledge gaps</title>
