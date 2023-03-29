@@ -18,4 +18,12 @@
     <summary>Version catalogs are an effective way to help manage your dependencies across multiple modules throughout Gradle based software projects.</summary>
   </entry>
 
+  <entry>
+    <title>Test Driven Development for Beginners</title>
+    <link rel="alternate" href="/blog/test-driven-development-for-beginners"/>
+    <id>https://ahart.dev/blog/test-driven-development-for-beginners/</id>
+    <updated>2023-03-29T13:11:03Z</updated>
+    <summary>In this post, I hope to present a gentle introduction to test driven development. I will explain what it is, why it is useful, how to apply it today, and when to avoid it. Best practices will be touched on, and hopefully you the reader will come out with a better understanding of what all the fuss is about.</summary>
+  </entry>
+
 </feed>

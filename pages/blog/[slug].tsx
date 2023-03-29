@@ -6,7 +6,8 @@ import BlogTitle from "@/components/molecules/BlogTitle";
 export async function getStaticPaths() {
   return {
     paths: [
-      '/blog/basic-gradle-version-catalogs'
+      '/blog/basic-gradle-version-catalogs',
+      '/blog/test-driven-development-for-beginners',
     ],
     fallback: false
   }

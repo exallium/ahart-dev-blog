@@ -17,7 +17,7 @@ export async function getStaticProps() {
 }
 
 const Home: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = (props) => {
-  console.log(props.feed.feed.entry[0].link[0]['$']['href'])
+  console.log(props.feed.feed.entry)
   return (
     <>
       {props.feed.feed.entry.map((entry: AtomEntry) => (
