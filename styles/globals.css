@@ -55,19 +55,9 @@
   @apply dark:text-blue-300;
 }
 
-.markdown p code {
+.markdown p code, .markdown ul code, .markdown li code {
   @apply text-red-500;
   @apply dark:text-red-300;
-}
-
-.markdown ul code {
-  @apply text-red-500;
-  @apply dark:text-red-300;
-}
-
-.markdown li code {
-  @apply text-red-500;
-  @apply dark:text-red-400;
 }
 
 .markdown ol {
