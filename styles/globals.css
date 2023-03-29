@@ -36,3 +36,12 @@
   @apply leading-7;
   @apply font-normal;
 }
+
+.markdown a {
+  @apply text-blue-700;
+  @apply dark:text-blue-300;
+}
+
+.markdown p code {
+  @apply text-red-500;
+}

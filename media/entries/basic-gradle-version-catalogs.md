@@ -111,4 +111,4 @@ This allows you to keep a sensible name, while also allowing you to mostly stick
 
 I hope that was an informative and direct explanation of version catalogs, their benefits, and some basic usage tips. There are a lot more you can do with these when configuring specific libraries, so I invite you to take a look at the [official documentation](https://docs.gradle.org/current/userguide/platforms.html) if that interests you.
 
-If you have any questions, corrections, or clarifications, you can reach out to me on [Mastodon](https://androiddev.social/web/@exallium) or [Twitter](https://twitter.com/Exallium).
+If you have any questions, corrections, or clarifications, you can reach out to me on [Mastodon](https://androiddev.social/web/@exallium).
