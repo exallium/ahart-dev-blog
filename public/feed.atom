@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title>AHART.DEV</title>
+  <link href="https://ahart.dev/"/>
+  <link rel="self" href="https://ahart.dev/feed.atom"/>
+  <updated>2023-03-29T13:11:03Z</updated>
+  <author>
+    <name>Alex Hart</name>
+  </author>
+  <id>https://ahart.dev/</id>
+
+  <entry>
+    <title>Getting started with Gradle Version Catalogs</title>
+    <link rel="alternate" href="/blog/basic-gradle-version-catalogs"/>
+    <id>https://ahart.dev/blog/basic-gradle-version-catalogs/</id>
+    <updated>2023-03-29T13:11:03Z</updated>
+    <summary>Version catalogs are an effective way to help manage your dependencies across multiple modules throughout Gradle based software projects.</summary>
+  </entry>
+
+</feed>

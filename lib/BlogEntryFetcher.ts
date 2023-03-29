@@ -9,6 +9,13 @@ import remarkStringify from "remark-stringify";
 import rehypeStringify from "rehype-stringify";
 import gradle from "highlight.js/lib/languages/gradle"
 
+export interface AtomEntry {
+  id: [string]
+  title: string
+  summary: string
+  link: [{'$': {'rel': string, 'href': string}}]
+}
+
 export default class BlogEntryFetcher {
 
   private static readonly ENTRIES_DIRECTORY = './media/entries/'
