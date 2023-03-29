@@ -3,8 +3,6 @@ title: Test Driven Development for Beginners
 slug: test-driven-development-for-beginners
 date: 2022-11-05
 ---
-# Test Driven Development for Beginners
-
 In this post, I hope to present a gentle introduction to test driven development. I will explain what it is, why it is useful, how to apply it today, and when to avoid it. Best practices will be touched on, and hopefully you the reader will come out with a better understanding of what all the fuss is about. This post is not exhaustive by any means, and if you wish to read and learn more about test driven development, then I recommend you pick up a copy of Kent Beck’s seminal work on the topic, [“Test Driven Development: By Example.”](https://amzn.to/3sJBkQ4)
 
 ## What is TDD, anyway?
@@ -30,7 +28,31 @@ In our newly minted, awe-inspiring to-do app, we will have a single screen that 
 
 For each requirement we are going to design a test case. Doing so is going to help us determine the over-all shape of our solution. Remember here that the goal is not to have a working application at the end of this step, but to have a compilable set of tests. It is expected that all of these tests will fail. We can use our requirements to guide what tests to write and how to label them.
 
-[https://gist.github.com/exallium/f592ec219ee41905cb1ecaef7b1c88b1](https://gist.github.com/exallium/f592ec219ee41905cb1ecaef7b1c88b1)
+```kotlin
+class TodoPresenterTest {
+
+  @Test
+  fun `When I init, then I expect notes in reverse chronological order`() {
+    fail()
+  }
+
+  @Test
+  fun `When I addNote, then I expect a new empty note at the head of the list`() {
+    fail()
+  }
+
+  @Test
+  fun `When I updateNote, then I expect the note to be updated with the given text`() {
+    fail()
+  }
+
+  @Test
+  fun `When I deleteNote, then I expect the note to be removed from the list`() {
+    fail()
+  }
+
+}
+```
 
 We now have a list of tests to implement. Running them compiles appropriately, but will obviously fail. From here, we need to decide on an API design. What do these tests tell us about the API we need? What does the presenter need to give us? Let us start at the top and work our way down.
 
@@ -38,19 +60,79 @@ We now have a list of tests to implement. Running them compiles appropriately, b
 
 For this specification, we need to see that we can get a list of notes back from the presenter in reverse chronological order. Given that this is an article concerning TDD and not one about reactive UI patterns, let us stick with simple mechanisms and assume for now that everything is to be single threaded. In a real world app, we may use a `State<T>` or a `Flow<T>` or any other number of containers depending on our UI framework and preferences. So, we will just expose a `List<T>`.
 
-[https://gist.github.com/exallium/cd619030fe185acb83e089269a02b248](https://gist.github.com/exallium/cd619030fe185acb83e089269a02b248)
+```kotlin
+/**
+ * A single todo note.
+ */
+data class TodoNote(
+  val body: String,
+  val creationTimestamp: Long
+)
+
+/**
+ * Presenter for our TODO notes.
+ */
+class TodoPresenter {
+  val notes: List<TodoNote> = emptyList()
+}
+```
 
 We now have a subject for our test that we can write assertions against. We can update our test to ensure that our list is in reverse chronological order. One such way to do this is to compare each pair of items in a sliding window:
 
-[https://gist.github.com/exallium/0c61549d4099776d61a84887ddd6c6d3](https://gist.github.com/exallium/0c61549d4099776d61a84887ddd6c6d3)
+```kotlin
+@Test
+fun `When I init, then I expect notes in reverse chronological order`() {
+  val notes = testSubject.notes
+
+  val isReverseChron = notes
+    .windowed(2, 1)
+    .all { (a, b) -> a.creationTimestamp > b.creationTimestamp }
+  
+  assertTrue(isReverseChron)
+}
+```
 
 We now need to initialize our list with some notes that should be displayed. This will generally come from some kind of data repository. We can modify our `TestPresenter` to take in a data repository that hands it a list of notes with randomized timestamps. We can create a `TodoRepository` interface, and then create a test fake inside our unit test class.
 
-[https://gist.github.com/exallium/2a1339b030cb329f848ed08e5789dc97](https://gist.github.com/exallium/2a1339b030cb329f848ed08e5789dc97)
+```kotlin
+// Beside our TodoPresenter:
+
+/**
+ * Data repository for our TodoPresenter
+ */
+interface TodoRepository {
+  fun getNotes(): List<TodoNote>
+}
+
+// In our TodoPresenterTest:
+private val fakeTestRepository = object : TodoRepository {
+  override fun getNotes(): List<TodoNote> {
+    return (1..10).map { 
+      TodoNote(
+        body = "Body $it",
+        creationTimestamp = Random.nextLong()
+      )
+    }
+  }
+}
+
+private val testSubject = TodoPresenter(fakeTestRepository)
+```
 
 Finally, we need to enforce the ordering. This is the *actual* business logic under test here. Everything before this point was more along the lines of setup. This is simple enough to do right in the presenter.
 
-[https://gist.github.com/exallium/7232b6b8c955815f1ddbbf2bebf0a22a](https://gist.github.com/exallium/7232b6b8c955815f1ddbbf2bebf0a22a)
+```kotlin
+class TodoPresenter(todoRepository: TodoRepository) {
+  val notes: List<TodoNote> = todoRepository.getNotes()
+    .sortedWith(NoteComparator().reversed())
+
+  private class NoteComparator : Comparator<TodoNote> {
+    override fun compare(o1: TodoNote, o2: TodoNote): Int {
+      return o1.creationTimestamp.compareTo(o2.creationTimestamp)
+    }
+  }
+}
+```
 
 Running the test again will present a green result. Hurray! First one down.
 
@@ -58,11 +140,54 @@ Running the test again will present a green result. Hurray! First one down.
 
 Now let us tackle the second case here of adding a note. The specification says that when we add a new note, that note should be placed as the head of our list. One such specification test could look like this.
 
-[https://gist.github.com/exallium/3ba0c84c8971e076236f9547a66e2017](https://gist.github.com/exallium/3ba0c84c8971e076236f9547a66e2017)
+```kotlin
+@Test
+fun `When I addNote, then I expect a new empty note at the head of the list`() {
+  val originalCount = testSubject.notes.size
+
+  testSubject.addNote()
+
+  val newCount = testSubject.notes.size
+  val firstNote = testSubject.notes.first()
+  assertEquals(originalCount + 1, newCount, "Expected a note to be added.")
+  assertEquals(firstNote.body, "", "Expected the head to be an empty note")
+}
+```
 
 At this point, `addNote` is simply an empty method on `TodoPresenter`. Obviously, this will fail as expected. We can now add our implementation, changing pre-existing code as needed. The important thing to note here is that we are NOT modifying unit tests, and we are always running every test to ensure the ones that were passing still pass.
 
-[https://gist.github.com/exallium/8155461d701e377614f6fb5df7306d61](https://gist.github.com/exallium/8155461d701e377614f6fb5df7306d61)
+```kotlin
+// Inside our TodoPresenter:
+
+private val _notes: MutableList<TodoNote> = mutableListOf()
+
+val notes: List<TodoNote> = _notes
+
+init {
+  _notes.addAll(todoRepository.getNotes().sortedWith(NoteComparator().reversed()))
+}
+
+fun addNote() {
+  _notes.add(0, TodoNote("", System.currentTimeMillis()))
+}
+
+// Inside our TodoPresenterTest:
+
+private val uniqueTimestamps = generateSequence { Random.nextLong(0, 100000) }
+  .take(10)
+  .toList()
+
+private val fakeTestRepository = object : TodoRepository {
+  override fun getNotes(): List<TodoNote> {
+    return (1..10).map {
+      TodoNote(
+        body = "Body $it",
+        creationTimestamp = uniqueTimestamps[it - 1]
+      )
+    }
+  }
+}
+```
 
 Using the same approach, we can add tests for both deletion and updating a name. All of the code for these steps will be provided in a GitHub repository linked at the bottom of this post.
 

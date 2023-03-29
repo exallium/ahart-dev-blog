@@ -1,5 +1,6 @@
-@import "highlight.js/styles/base16/solarized-dark.css" (prefers-color-scheme: dark);
-@import "highlight.js/styles/base16/solarized-light.css" (prefers-color-scheme: light);
+@import "highlight.js/styles/base16/solarized-light.css" screen;
+@import "highlight.js/styles/base16/solarized-dark.css" screen and (prefers-color-scheme: dark);
+
 
 @tailwind base;
 @tailwind components;
@@ -26,8 +27,20 @@
 /* Markdown styling for page contents */
 
 .markdown h1 {
-  @apply mt-3;
+  @apply mt-4;
+  @apply text-4xl;
+  @apply font-semibold;
+}
+
+.markdown h2 {
+  @apply mt-4;
   @apply text-2xl;
+  @apply font-semibold;
+}
+
+.markdown h3 {
+  @apply mt-4;
+  @apply text-xl;
   @apply font-semibold;
 }
 
@@ -44,4 +57,27 @@
 
 .markdown p code {
   @apply text-red-500;
+  @apply dark:text-red-300;
+}
+
+.markdown ul code {
+  @apply text-red-500;
+  @apply dark:text-red-300;
+}
+
+.markdown li code {
+  @apply text-red-500;
+  @apply dark:text-red-400;
+}
+
+.markdown ol {
+  @apply list-decimal;
+  @apply px-4;
+  @apply py-2;
+}
+
+.markdown ul {
+  @apply list-disc;
+  @apply px-4;
+  @apply py-2;
 }

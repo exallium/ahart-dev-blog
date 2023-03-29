@@ -15,7 +15,7 @@ ext {
 }
 ```
 
-# Separation of concerns
+## Separation of concerns
 
 When starting a new project in Android Studio these days, there are some additional things in `settings.gradle` that may be unfamiliar to folks working on older projects. This includes a `dependencyResolutionManagement` configuration block.
 
@@ -37,7 +37,7 @@ This will give you a separate file in which to devote to your dependencies, and 
 
 Within this new `dependencies.gradle` file, we can start adding our actual dependencies.
 
-# Namespacing
+## Namespacing
 
 Careful readers will note that our `dependencyResolutionManagement` has an object called `versionCatalogs`. It is plural, meaning we can define as many as we wish. This is where proper namespacing can come into play. Namespacing in this context is the grouping of common units under a single name. For example, we could think of Java or Kotlin packages as an example of namespacing. With version catalogs we can simply define new object declarations with the name we wish to use.
 
@@ -54,7 +54,7 @@ dependencyResolutionManagement {
 
 If we had another configuration, we could add that here too. For example, `androidTestLibs` could be its own catalog. The most important thing here is that however we build out our catalogs, we should ensure that any given dependency is listed exactly once. If subproject A replies on dependency a for `stagingImplementation` but subproject relies on it for `implementation` or some other custom variation, then we should store the dependency a under `libs`.
 
-# Adding dependencies
+## Adding dependencies
 
 Now that we have our structure created, how do we add dependencies? We add `library` entries.
 
@@ -91,7 +91,7 @@ dependencyResolutionManagement {
 }
 ```
 
-# A note on naming
+## A note on naming
 
 In general, try to use sensible naming according to the group and artifact of a given object, and try not to be repetitive. For example, if we have `androidx.recyclerview:recyclerview` then it is fine to simply use `androidx-recyclerview` .
 
@@ -107,7 +107,7 @@ In these cases, it is impossible to utilize the artifact names by themselves whe
 
 This allows you to keep a sensible name, while also allowing you to mostly stick with using some sort of group / artifact naming scheme.
 
-# Conclusion
+## Conclusion
 
 I hope that was an informative and direct explanation of version catalogs, their benefits, and some basic usage tips. There are a lot more you can do with these when configuring specific libraries, so I invite you to take a look at the [official documentation](https://docs.gradle.org/current/userguide/platforms.html) if that interests you.
 
