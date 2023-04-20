@@ -4,7 +4,7 @@
   <title>AHART.DEV</title>
   <link href="https://ahart.dev/"/>
   <link rel="self" href="https://ahart.dev/feed.atom"/>
-  <updated>2023-03-29T19:57:28Z</updated>
+  <updated>2023-04-20T14:19:25Z</updated>
   <author>
     <name>Alex Hart</name>
   </author>
@@ -35,19 +35,19 @@
   </entry>
 
   <entry>
-    <title>Getting started with Gradle Version Catalogs</title>
-    <link rel="alternate" href="/blog/basic-gradle-version-catalogs"/>
-    <id>https://ahart.dev/blog/basic-gradle-version-catalogs/</id>
-    <updated>2023-03-29T13:11:03Z</updated>
-    <summary>Version catalogs are an effective way to help manage your dependencies across multiple modules throughout Gradle based software projects.</summary>
-  </entry>
-
-  <entry>
     <title>Test Driven Development for Beginners</title>
     <link rel="alternate" href="/blog/test-driven-development-for-beginners"/>
     <id>https://ahart.dev/blog/test-driven-development-for-beginners/</id>
     <updated>2023-03-29T13:11:03Z</updated>
     <summary>In this post, I hope to present a gentle introduction to test driven development. I will explain what it is, why it is useful, how to apply it today, and when to avoid it. Best practices will be touched on, and hopefully you the reader will come out with a better understanding of what all the fuss is about.</summary>
+  </entry>
+
+  <entry>
+    <title>Getting started with Gradle Version Catalogs</title>
+    <link rel="alternate" href="/blog/basic-gradle-version-catalogs"/>
+    <id>https://ahart.dev/blog/basic-gradle-version-catalogs/</id>
+    <updated>2023-03-29T13:11:03Z</updated>
+    <summary>Version catalogs are an effective way to help manage your dependencies across multiple modules throughout Gradle based software projects.</summary>
   </entry>
 
 </feed>

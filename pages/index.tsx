@@ -19,7 +19,7 @@ export async function getStaticProps() {
 const Home: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = (props) => {
   return (
     <div className='grid grid-cols-1 md:grid-cols-2 gap-4 p-4'>
-      {props.feed.feed.entry.map((entry: AtomEntry) => (
+      {props.feed.feed.entry.reverse().map((entry: AtomEntry) => (
         <div className="mt-4 border-b pb-4" key={entry.id[0]}>
           <FeedEntryTitle title={entry.title} link={entry.link[0]['$']['href']}/>
           <p className='mt-2'>{entry.summary}</p>
