@@ -18,6 +18,9 @@ const NavigationBar: React.FC = () => {
         <NavigationLinkItem href='/about'>
           ABOUT
         </NavigationLinkItem>
+        <NavigationLinkItem href='/now'>
+          NOW
+        </NavigationLinkItem>
       </NavigationMenu.List>
     </NavigationMenu.Root>
   )
