@@ -2,6 +2,7 @@ import React, {ReactNode} from "react";
 import NavigationBar from "@/components/organisms/NavigationBar";
 import Footer from "@/components/organisms/Footer";
 import Divider from "@/components/atoms/Divider";
+import {Analytics} from "@vercel/analytics/dist/react";
 
 const Layout: React.FC<{
   children: ReactNode
@@ -15,6 +16,7 @@ const Layout: React.FC<{
       </main>
       <Divider className="my-4"/>
       <Footer/>
+      <Analytics />
     </div>
   )
 }
