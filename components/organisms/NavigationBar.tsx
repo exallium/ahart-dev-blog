@@ -15,7 +15,7 @@ const NavigationBar: React.FC = () => {
         <NavigationLinkItem href='/' className='mr-4'>
           BLOG
         </NavigationLinkItem>
-        <NavigationLinkItem href='/about'>
+        <NavigationLinkItem href='/about' className='mr-4'>
           ABOUT
         </NavigationLinkItem>
         <NavigationLinkItem href='/now'>
