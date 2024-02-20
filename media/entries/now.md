@@ -15,21 +15,22 @@ This is to serve as an overview of me, right now.
 # Work
 * Working at [Signal](https://signal.org) making the android app awesome!
 * Currently hard at work making sure we are ready for a big feature launch very soon!
-* Going on pat leave for the month of February
+* Currently on parental leave, and enjoying spending lots of time with my family.
 * I've got a side thing I'm trying to get off the ground but we'll see what kind of time and mental capacity I have for it this year.
 # Play
 * I am huge into video games and have been since I was a kid
 * My Steam Deck has proven invaluable while we are finding our footing with the new baby
-* I have a personal goal to achieve certain ranks in different fighting games, so I've mainly been playing them.
+* I have a personal goal to generally improve at fighting games, so I've mainly been playing them.
+  * Tekken 8 (playing Lars)
+  * Guilty Gear Strive (playing Sin)
   * Street Fighter 6 (playing Cammy)
   * GranBlue Fantasy Versus Rising (playing Belial)
-  * Guilty Gear Strive (playing Sin)
-  * Looking forward to the release of Tekken 8! (probably playing Dragunov)
 * Also playing a lot of RPGs and looking forward to them.
   * Yakuza: The Man who Erased his Name
   * Yakuza: Infinite Wealth
   * Persona 3 Reload
   * FF7 Rebirth
+  * Rise of the Ronin
 # Music
 * I'm not currently making music, due to time constraints elsewhere in life.
 * If you'd like to check out things I've made in the past, you can see my soundcloud profile [here](https://soundcloud.com/user-102402905)
