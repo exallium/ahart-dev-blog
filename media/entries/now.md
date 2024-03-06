@@ -8,38 +8,35 @@ at [nownownow](https://nownownow.com/about)
 This is to serve as an overview of me, right now.
 
 # Life
-* We welcomed our second little boy back in October 2023
-* We got solar panels last fall and I'm excited to see how they function when the sun comes back out
-* The days are spent either working or with my family. As are the nights!
-* Working at home is such a blessing because I get to see my little ones develop first hand.
+* Trying to get the most out of each day with my wife and kids.
+* Busily working to getting the baby's room ready for when he hits 6 months.
+* Gaming a lot in my free time, as one does.
 # Work
 * Working at [Signal](https://signal.org) making the android app awesome!
-* Currently hard at work making sure we are ready for a big feature launch very soon!
-* Currently on parental leave, and enjoying spending lots of time with my family.
+* Super proud to have worked on and released the new usernames feature.
 * I've got a side thing I'm trying to get off the ground but we'll see what kind of time and mental capacity I have for it this year.
-# Play
-* I am huge into video games and have been since I was a kid
-* My Steam Deck has proven invaluable while we are finding our footing with the new baby
-* I have a personal goal to generally improve at fighting games, so I've mainly been playing them.
-  * Tekken 8 (playing Lars)
-  * Guilty Gear Strive (playing Sin)
-  * Street Fighter 6 (playing Cammy)
-  * GranBlue Fantasy Versus Rising (playing Belial)
-* Also playing a lot of RPGs and looking forward to them.
-  * Yakuza: The Man who Erased his Name
+# Gaming
+* I've been a gamer since I was a kid. It's a wonderful way for me to unwind at the end of a long day.
+* I'm a very competitive person, so I try to scratch that itch when I can via fighting games.
+* Current competitive games
+  * Tekken 8 (Lars)
+  * Guilty Gear Strive (Sin)
+* Current casual games
+  * Helldivers 2
+  * Dave the Diver
+* Current RPG
   * Yakuza: Infinite Wealth
-  * Persona 3 Reload
-  * FF7 Rebirth
-  * Rise of the Ronin
 # Music
 * I'm not currently making music, due to time constraints elsewhere in life.
 * If you'd like to check out things I've made in the past, you can see my soundcloud profile [here](https://soundcloud.com/user-102402905)
 * I'm currently listening to a lot of Periphery and Synthwave.
 * I implore everyone to go check out Sleep Token as well, they are incredible.
 # Reading
-* I am currently reading "The Sunlit Man" by Brandon Sanderson
-* Up next is going to be "The Will to Keep Winning" by Daigo Umehara
-* After that I'll be reading "Doom Guy" by John Romero
+* On a bit of a reading haitus until our little one is sleeping in his own room.
+* Current / Up Next
+  * "The Sunlit Man" by Brandon Sanderson
+  * "The Will to Keep Winning" by Daigo Umehara
+  * "Doom Guy" by John Romero
 * Looking forward to book 5 of the Stormlight Archives due out in November!
 # Writing
 * I'm not currently writing, due to time constraints elsewhere in life.
