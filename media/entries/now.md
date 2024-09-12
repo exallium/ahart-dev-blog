@@ -1,6 +1,6 @@
 ---
 title: What I'm up to right now
-date: 2023-01-17
+date: 2024-09-12
 ---
 Welcome to my Now page! If you don't know what this is, check out the details over
 at [nownownow](https://nownownow.com/about)
@@ -9,12 +9,12 @@ This is to serve as an overview of me, right now.
 
 # Life
 * Trying to get the most out of each day with my wife and kids.
-* Busily working to getting the baby's room ready for when he hits 6 months.
+* Sleep training my almost 1yo!
 * Gaming a lot in my free time, as one does.
 # Work
 * Working at [Signal](https://signal.org) making the android app awesome!
-* Super proud to have worked on and released the new usernames feature.
-* I've got a side thing I'm trying to get off the ground but we'll see what kind of time and mental capacity I have for it this year.
+* A couple really exciting new features in the works at Signal!
+* Still chipping away at my side thing, just very slowly.
 # Gaming
 * I've been a gamer since I was a kid. It's a wonderful way for me to unwind at the end of a long day.
 * I'm a very competitive person, so I try to scratch that itch when I can via fighting games.
