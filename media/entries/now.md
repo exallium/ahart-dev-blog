@@ -1,6 +1,6 @@
 ---
 title: What I'm up to right now
-date: 2024-09-12
+date: 2025-07-01
 ---
 Welcome to my Now page! If you don't know what this is, check out the details over
 at [nownownow](https://nownownow.com/about)
