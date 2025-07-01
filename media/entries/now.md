@@ -8,8 +8,7 @@ at [nownownow](https://nownownow.com/about)
 This is to serve as an overview of me, right now.
 
 # Life
-* Trying to get the most out of each day with my wife and kids.
-* Sleep training my almost 1yo!
+* Trying to get the most out of each day with my wife and kids!
 * Gaming a lot in my free time, as one does.
 # Work
 * Working at [Signal](https://signal.org) making the android app awesome!
@@ -18,14 +17,13 @@ This is to serve as an overview of me, right now.
 # Gaming
 * I've been a gamer since I was a kid. It's a wonderful way for me to unwind at the end of a long day.
 * I'm a very competitive person, so I try to scratch that itch when I can via fighting games.
-* Current competitive games
-  * Tekken 8 (Lars)
-  * Guilty Gear Strive (Sin)
+* Current competitive game
+  * Tekken 8 (Nina, maybe Fahkumram)
 * Current casual games
-  * Helldivers 2
-  * Dave the Diver
+  * Road Craft
+  * Slay the Spire
 * Current RPG
-  * Yakuza: Infinite Wealth
+  * Expedition 33
 # Music
 * I'm not currently making music, due to time constraints elsewhere in life.
 * If you'd like to check out things I've made in the past, you can see my soundcloud profile [here](https://soundcloud.com/user-102402905)
@@ -34,16 +32,15 @@ This is to serve as an overview of me, right now.
 # Reading
 * On a bit of a reading haitus until our little one is sleeping in his own room.
 * Current / Up Next
-  * "The Sunlit Man" by Brandon Sanderson
-  * "The Will to Keep Winning" by Daigo Umehara
-  * "Doom Guy" by John Romero
-* Looking forward to book 5 of the Stormlight Archives due out in November!
+  * "Wind and Truth" by Brandon Sanderson
+  * "Nexus" by Yuval Noah Harari
+  * "How to raise kids who aren't assholes" by Melinda Wenner Moyer
 # Writing
 * I'm not currently writing, due to time constraints elsewhere in life.
 * You're in the right place though! And if you want to keep tabs on whether I start again, please feel free to [susbscribe to my atom feed](https://www.ahart.dev/feed.atom)
 # Dreaming
-* My hope for 2024 is one of growth.
+* My hope for 2025 is one of growth.
   * Mental growth, and developing my growth mindset.
   * Family growth (not in number, but in that my children are happy and healthy)
-  * Financial growth, as we try to brace against rising interest rates and the like
+  * Financial growth, as we try to brace against... ya know...
   * Physical growth, as I hope to start eating better, not eating at night, and generally taking better care of myself.
